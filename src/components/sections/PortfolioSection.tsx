@@ -9,40 +9,29 @@ import project3 from '@/assets/project-3.jpg';
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A modern, responsive e-commerce platform built with React and Node.js, featuring real-time inventory management and seamless payment integration.',
+    title: 'Library Management System',
+    description: 'A comprehensive library management application developed as a college mini project. Features book cataloging, member management, and automated borrowing/return tracking with an intuitive interface.',
     image: project1,
     category: 'Web Development',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    tags: ['MERN Stack', 'MongoDB', 'React', 'Node.js'],
     liveUrl: '#',
     githubUrl: '#',
     featured: true,
   },
   {
     id: 2,
-    title: 'Mobile Banking App',
-    description: 'Intuitive mobile banking application with biometric authentication, expense tracking, and financial insights dashboard.',
+    title: 'Carbon Footprint Tracker',
+    description: 'A health-conscious application designed to help users track and reduce their carbon footprint. Provides personalized insights and actionable recommendations for sustainable living.',
     image: project2,
-    category: 'Mobile App',
-    tags: ['React Native', 'TypeScript', 'Firebase'],
+    category: 'Web Development',
+    tags: ['JavaScript', 'React', 'Node.js', 'MongoDB'],
     liveUrl: '#',
     githubUrl: '#',
     featured: true,
   },
-  {
-    id: 3,
-    title: 'Brand Identity System',
-    description: 'Complete brand identity design for a sustainable fashion startup, including logo, typography, color palette, and brand guidelines.',
-    image: project3,
-    category: 'Branding',
-    tags: ['Brand Design', 'Logo Design', 'Style Guide'],
-    liveUrl: '#',
-    githubUrl: '#',
-    featured: false,
-  },
 ];
 
-const categories = ['All', 'Web Development', 'Mobile App', 'Branding'];
+const categories = ['All', 'Web Development'];
 
 export const PortfolioSection = () => {
   const [activeCategory, setActiveCategory] = useState('All');

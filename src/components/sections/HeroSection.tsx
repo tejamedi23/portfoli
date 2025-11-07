@@ -24,7 +24,7 @@ const ParticleBackground = () => {
 
 export const HeroSection = () => {
   const [text, setText] = useState('');
-  const fullText = "Creative Designer & Developer";
+  const fullText = "MERN Stack Developer & AI Enthusiast";
   
   useEffect(() => {
     let index = 0;
@@ -62,7 +62,7 @@ export const HeroSection = () => {
           {/* Content */}
           <div className="lg:w-1/2 text-center lg:text-left animate-fade-in-up">
             <h1 className="text-display gradient-text mb-6">
-              Hello, I'm Alex Rivera
+              Hello, I'm Teja
             </h1>
             
             <div className="text-title text-muted-foreground mb-8 h-8">
@@ -70,9 +70,9 @@ export const HeroSection = () => {
             </div>
             
             <p className="text-body text-muted-foreground mb-8 max-w-2xl">
-              I craft digital experiences that blend aesthetic beauty with functional excellence. 
-              From concept to deployment, I bring ideas to life through thoughtful design and 
-              clean, efficient code.
+              A passionate MERN stack learner and AI enthusiast looking forward to working with 
+              AI-based companies. I build full-stack applications that solve real-world problems 
+              with modern technologies and innovative approaches.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -101,7 +101,7 @@ export const HeroSection = () => {
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden float-animation">
                 <img
                   src={headshot}
-                  alt="Alex Rivera - Creative Designer & Developer"
+                  alt="Teja - MERN Stack Developer & AI Enthusiast"
                   className="w-full h-full object-cover"
                 />
               </div>

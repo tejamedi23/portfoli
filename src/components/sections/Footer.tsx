@@ -5,7 +5,7 @@ const socialLinks = [
   { icon: Github, href: '#', label: 'GitHub' },
   { icon: Linkedin, href: '#', label: 'LinkedIn' },
   { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Mail, href: 'mailto:hello@alexrivera.dev', label: 'Email' },
+  { icon: Mail, href: 'mailto:tejamedi23@gmail.com', label: 'Email' },
 ];
 
 export const Footer = () => {
@@ -18,10 +18,10 @@ export const Footer = () => {
           {/* Logo and Copyright */}
           <div className="text-center md:text-left">
             <div className="text-xl font-playfair font-bold gradient-text mb-2">
-              Alex Rivera
+              Teja
             </div>
             <p className="text-caption text-muted-foreground">
-              © {currentYear} Alex Rivera. All rights reserved.
+              © {currentYear} Teja. All rights reserved.
             </p>
           </div>
 

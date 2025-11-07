@@ -10,19 +10,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@alexrivera.dev',
-    href: 'mailto:hello@alexrivera.dev',
+    value: 'tejamedi23@gmail.com',
+    href: 'mailto:tejamedi23@gmail.com',
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
+    value: '+91 9347562325',
+    href: 'tel:+919347562325',
   },
   {
     icon: MapPin,
     label: 'Location',
-    value: 'San Francisco, CA',
+    value: 'Hyderabad, Telangana',
     href: '#',
   },
 ];

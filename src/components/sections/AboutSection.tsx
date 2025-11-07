@@ -2,12 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import workspace from '@/assets/workspace.jpg';
 
 const skills = [
-  { name: 'UI/UX Design', level: 95 },
-  { name: 'React/TypeScript', level: 90 },
-  { name: 'Brand Identity', level: 85 },
-  { name: 'Mobile Development', level: 80 },
-  { name: 'Node.js/Backend', level: 75 },
-  { name: 'Motion Design', level: 70 },
+  { name: 'UI/UX Design', level: 85 },
+  { name: 'HTML/CSS/JavaScript', level: 90 },
+  { name: 'MERN Stack', level: 85 },
+  { name: 'Node.js', level: 80 },
+  { name: 'DSA', level: 75 },
+  { name: 'React Development', level: 88 },
 ];
 
 const SkillBar = ({ skill, isVisible }: { skill: typeof skills[0], isVisible: boolean }) => {
@@ -83,20 +83,19 @@ export const AboutSection = () => {
             
             <div className="text-body text-muted-foreground mb-8 space-y-4">
               <p>
-                With over 5 years of experience in the digital realm, I've had the privilege 
-                of working with startups, agencies, and Fortune 500 companies to bring their 
-                visions to life.
+                I'm a passionate MERN stack learner and AI enthusiast from Hyderabad, Telangana, 
+                eager to work with AI-based companies and contribute to cutting-edge technological solutions.
               </p>
               
               <p>
-                My approach combines strategic thinking with creative execution. I believe 
-                that great design isn't just about how something looks—it's about how it 
-                works, how it feels, and how it solves real problems for real people.
+                My journey in development has been driven by a desire to create applications that make 
+                a real difference. I believe in combining technical skills with creative problem-solving 
+                to build solutions that are both functional and user-friendly.
               </p>
               
               <p>
-                When I'm not designing or coding, you'll find me exploring new technologies, 
-                mentoring aspiring designers, or planning my next adventure.
+                When I'm not coding, I'm exploring new AI technologies, learning advanced data structures 
+                and algorithms, and staying updated with the latest trends in full-stack development.
               </p>
             </div>
 
@@ -117,16 +116,16 @@ export const AboutSection = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-1">50+</div>
+                <div className="text-2xl font-bold text-primary mb-1">2+</div>
                 <div className="text-caption">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-1">25+</div>
-                <div className="text-caption">Happy Clients</div>
+                <div className="text-2xl font-bold text-primary mb-1">6+</div>
+                <div className="text-caption">Technologies</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-1">5+</div>
-                <div className="text-caption">Years Experience</div>
+                <div className="text-2xl font-bold text-primary mb-1">100%</div>
+                <div className="text-caption">Passion Driven</div>
               </div>
             </div>
           </div>
