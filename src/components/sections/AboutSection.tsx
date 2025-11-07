@@ -92,11 +92,6 @@ export const AboutSection = () => {
                 a real difference. I believe in combining technical skills with creative problem-solving 
                 to build solutions that are both functional and user-friendly.
               </p>
-              
-              <p>
-                When I'm not coding, I'm exploring new AI technologies, learning advanced data structures 
-                and algorithms, and staying updated with the latest trends in full-stack development.
-              </p>
             </div>
 
             {/* Skills */}

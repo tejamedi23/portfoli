@@ -49,7 +49,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="text-xl font-playfair font-bold gradient-text">
-            Alex Rivera
+            Teja Medi
           </div>
 
           {/* Navigation Links */}

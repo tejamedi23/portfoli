@@ -2,8 +2,8 @@ import React from 'react';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Github, href: 'https://github.com/tejamedi23', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/teja-medi', label: 'LinkedIn' },
   { icon: Twitter, href: '#', label: 'Twitter' },
   { icon: Mail, href: 'mailto:tejamedi23@gmail.com', label: 'Email' },
 ];
