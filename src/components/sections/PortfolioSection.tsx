@@ -29,6 +29,17 @@ const projects = [
     githubUrl: '#',
     featured: true,
   },
+  {
+    id: 3,
+    title: 'Personal AI Assistant',
+    description: 'An intelligent AI-powered assistant application that helps users with daily tasks, scheduling, and information retrieval. Features natural language processing and smart automation capabilities.',
+    image: project3,
+    category: 'Web Development',
+    tags: ['AI', 'React', 'Node.js', 'NLP'],
+    liveUrl: '#',
+    githubUrl: '#',
+    featured: true,
+  },
 ];
 
 const categories = ['All', 'Web Development'];
