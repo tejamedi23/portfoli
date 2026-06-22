@@ -1,10 +1,9 @@
 import React from 'react';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/tejamedi23', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/teja-medi', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/teja-medi-137b87332/', label: 'LinkedIn' },
   { icon: Mail, href: 'mailto:tejamedi23@gmail.com', label: 'Email' },
 ];
 
@@ -31,6 +30,8 @@ export const Footer = () => {
               <a
                 key={index}
                 href={social.href}
+                target={social.href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={social.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                 aria-label={social.label}
                 className="w-10 h-10 bg-muted hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 group"
               >

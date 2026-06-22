@@ -14,8 +14,8 @@ const projects = [
     image: project1,
     category: 'Web Development',
     tags: ['MERN Stack', 'MongoDB', 'React', 'Node.js'],
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: '',
+    githubUrl: 'https://github.com/tejamedi23',
     featured: true,
   },
   {
@@ -25,8 +25,8 @@ const projects = [
     image: project2,
     category: 'Web Development',
     tags: ['JavaScript', 'React', 'Node.js', 'MongoDB'],
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: '',
+    githubUrl: 'https://github.com/tejamedi23',
     featured: true,
   },
   {
@@ -36,8 +36,8 @@ const projects = [
     image: project3,
     category: 'Web Development',
     tags: ['AI', 'React', 'Node.js', 'NLP'],
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: '',
+    githubUrl: 'https://github.com/tejamedi23',
     featured: true,
   },
 ];
@@ -102,13 +102,19 @@ export const PortfolioSection = () => {
                 <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="text-white">
                     <div className="flex gap-3 mb-4">
-                      <Button size="sm" variant="secondary" className="bg-white/20 hover:bg-white/30 text-white border-white/30">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
-                      </Button>
-                      <Button size="sm" variant="secondary" className="bg-white/20 hover:bg-white/30 text-white border-white/30">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
+                      {project.liveUrl && (
+                        <Button asChild size="sm" variant="secondary" className="bg-white/20 hover:bg-white/30 text-white border-white/30">
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Live Demo
+                          </a>
+                        </Button>
+                      )}
+                      <Button asChild size="sm" variant="secondary" className="bg-white/20 hover:bg-white/30 text-white border-white/30">
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -147,11 +153,14 @@ export const PortfolioSection = () => {
         {/* View More */}
         <div className="text-center mt-12">
           <Button 
+            asChild
             variant="outline" 
             size="lg"
             className="px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105"
           >
-            View All Projects
+            <a href="https://github.com/tejamedi23" target="_blank" rel="noopener noreferrer">
+              View All Projects
+            </a>
           </Button>
         </div>
       </div>

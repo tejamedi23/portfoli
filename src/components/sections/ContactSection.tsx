@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { cn } from '@/lib/utils';
+
+// EmailJS config — get these from https://dashboard.emailjs.com after creating
+// a free account, an Email Service, and an Email Template. See README for steps.
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
 
 const contactInfo = [
   {
@@ -47,15 +55,43 @@ export const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      toast({
+        title: "Contact form not configured",
+        description: "EmailJS keys are missing. Add them to your .env file (see README).",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
       toast({
         title: "Message sent!",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
       setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Your message couldn't be sent. Please try emailing me directly.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -77,21 +113,28 @@ export const ContactSection = () => {
             <h3 className="text-title mb-8">Get In Touch</h3>
             
             <div className="space-y-6 mb-8">
-              {contactInfo.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-background hover:bg-muted transition-all duration-300 hover:scale-105 group"
-                >
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <item.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-caption text-muted-foreground">{item.label}</div>
-                    <div className="text-body font-medium">{item.value}</div>
-                  </div>
-                </a>
-              ))}
+              {contactInfo.map((item, index) => {
+                const isClickable = item.href !== '#';
+                const Wrapper = isClickable ? 'a' : 'div';
+                return (
+                  <Wrapper
+                    key={index}
+                    {...(isClickable ? { href: item.href } : {})}
+                    className={cn(
+                      "flex items-center gap-4 p-4 rounded-xl bg-background transition-all duration-300 group",
+                      isClickable && "hover:bg-muted hover:scale-105"
+                    )}
+                  >
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <item.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-caption text-muted-foreground">{item.label}</div>
+                      <div className="text-body font-medium">{item.value}</div>
+                    </div>
+                  </Wrapper>
+                );
+              })}
             </div>
 
             <div className="bg-gradient-to-br from-primary/10 to-primary-glow/10 p-6 rounded-2xl">
