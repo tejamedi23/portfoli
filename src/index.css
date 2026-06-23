@@ -178,7 +178,7 @@ All colors MUST be HSL for consistent theming.
 @layer components {
   /* Hero Section */
   .hero-container {
-    @apply min-h-screen flex items-center justify-center relative overflow-hidden;
+    @apply min-h-screen flex items-center justify-center relative overflow-hidden py-24 md:py-20;
     background: var(--hero-gradient);
   }
 

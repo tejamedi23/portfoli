@@ -65,7 +65,7 @@ export const HeroSection = () => {
               Hello, I'm Teja
             </h1>
             
-            <div className="text-title text-muted-foreground mb-8 h-8">
+            <div className="text-title text-muted-foreground mb-8 min-h-[2.5rem] md:min-h-[2rem] break-words">
               {text}<span className="animate-pulse">|</span>
             </div>
             
